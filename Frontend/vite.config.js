@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Resume_GenAi/"
+  base: "/Resume_GenAi/",   // 🔥 IMPORTANT (repo name)
 })
