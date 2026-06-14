@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-<BrowserRouter basename="/Resume_GenAi">
+<BrowserRouter basename="/Resume_GenAi"></BrowserRouter>
 import Login from "./features/auth/pages/Login";
 import Register from "./features/auth/pages/Register";
 import Protected from "./features/auth/components/Protected";
