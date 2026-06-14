@@ -3,8 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "./features/auth/pages/Login";
 import Register from "./features/auth/pages/Register";
 
-import Protected from "./features/auth/components/Protected";
-
+import Protected from "./features/auth/components/protected.jsx";
 import Home from "./features/interview/pages/Home";
 import Interview from "./features/interview/pages/Interview";
 
