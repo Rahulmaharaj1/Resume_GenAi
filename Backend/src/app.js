@@ -8,12 +8,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:[
-        "http://localhost:5173",
-        "https://rahulmaharaj1.github.io"
-    ],
+    origin:"https://resume-gen-ai-lilac.vercel.app",
     credentials:true
-}));
+}))
 
 /* require routes */
 const authRouter = require("./routes/auth.routes");
