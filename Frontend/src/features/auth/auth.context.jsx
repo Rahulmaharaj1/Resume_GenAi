@@ -1,27 +1,78 @@
 import { createContext, useState, useEffect } from "react";
-import { getMe } from "./services/auth.api";
 
 export const AuthContext = createContext({});
 
+
 export const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("@RNAuth:user");
 
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
+  useEffect(() => {
+
+
+    try {
+
+
+      const storedUser =
+      localStorage.getItem("@RNAuth:user");
+
+
+      if (storedUser && storedUser !== "undefined") {
+
+
+        setUser(
+          JSON.parse(storedUser)
+        );
+
+
+      }
+
+
+    } catch(error) {
+
+
+      console.log(
+        "Auth parse error:",
+        error
+      );
+
+
+      localStorage.removeItem("@RNAuth:user");
+
+
+      setUser(null);
+
+
     }
 
+
     setLoading(false);
+
+
   }, []);
 
+
+
   return (
+
     <AuthContext.Provider
-      value={{ user, setUser, loading, setLoading }}
+
+      value={{
+        user,
+        setUser,
+        loading,
+        setLoading
+      }}
+
     >
+
       {children}
+
     </AuthContext.Provider>
+
   );
+
 };
