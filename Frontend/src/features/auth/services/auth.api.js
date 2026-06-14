@@ -2,12 +2,9 @@ import axios from "axios";
 
 
 const api = axios.create({
-
     baseURL: "https://resume-genai.onrender.com",
-
     withCredentials: true
-
-});
+})
 
 
 
